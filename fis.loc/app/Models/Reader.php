@@ -17,6 +17,10 @@ class Reader extends Model
         'updated_at'
     ];
 
+    /**
+     * Напишите SQL-запрос,
+     * который бы возвращал самого популярного автора за год
+     */
     public function popularAuthor()
     {
         $from = date('2019-01-01');
@@ -39,6 +43,10 @@ class Reader extends Model
         return (new Book())->getBookAuthor($book_id);
     }
 
+    /**
+     * Определите понятие «злостный читатель».
+     * Предложите алгоритм для поиска самого злостного читателя библиотеки.
+     */
     public function goldReader()
     {
         //
