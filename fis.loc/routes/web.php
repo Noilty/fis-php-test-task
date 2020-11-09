@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+/**
+ * PageController
+ */
+use App\Http\Controllers\PageController as PageController;
+Route::group([
+    'as' => 'pages.'
+], function () {
+    Route::get('/',
+        [PageController::class, 'index']
+    )->name('home');
 });
