@@ -15,6 +15,7 @@ class CreatePublishingHousesTable extends Migration
     {
         Schema::create('publishing_houses', function (Blueprint $table) {
             $table->bigIncrements('phid')
+                ->unsigned()
                 ->comment('Идентификатор издательства');
             $table->string('name')
                 ->nullable(false)

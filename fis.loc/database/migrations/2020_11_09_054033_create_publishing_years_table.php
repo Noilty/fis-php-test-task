@@ -15,6 +15,7 @@ class CreatePublishingYearsTable extends Migration
     {
         Schema::create('publishing_years', function (Blueprint $table) {
             $table->bigIncrements('pyid')
+                ->unsigned()
                 ->comment('Идентификатор года');
             $table->string('year')
                 ->nullable(false)

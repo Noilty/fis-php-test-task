@@ -15,6 +15,7 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->bigIncrements('aid')
+                ->unsigned()
                 ->comment('Идентификатор автора');
             $table->string('surname')
                 ->nullable(false)

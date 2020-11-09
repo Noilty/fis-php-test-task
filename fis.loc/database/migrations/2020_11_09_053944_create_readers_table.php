@@ -15,10 +15,13 @@ class CreateReadersTable extends Migration
     {
         Schema::create('readers', function (Blueprint $table) {
             $table->bigIncrements('rid')
+                ->unsigned()
                 ->comment('Идентификатор читателя');
             $table->bigInteger('student_id')
+                ->unsigned()
                 ->comment('Идентификатор студента');
             $table->bigInteger('book_id')
+                ->unsigned()
                 ->comment('Идентификатор книги');
             $table->timestamp('created_at')
                 ->useCurrent()
@@ -26,13 +29,6 @@ class CreateReadersTable extends Migration
             $table->timestamp('updated_at')
                 ->useCurrent()
                 ->comment('Дата возврата книги');
-            //$table->timestamps();
-
-            $table->foreign('student_id')
-                ->references('sid')
-                ->on('students');
-
-            $table->primary(['student_id']);
         });
     }
 

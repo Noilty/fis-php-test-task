@@ -20,15 +20,19 @@ class CreateBooksTable extends Migration
                 ->nullable(false)
                 ->comment('Название книги');
             $table->bigInteger('author_id')
+                ->unsigned()
                 ->nullable(false)
                 ->comment('Идентификатор автора');
             $table->bigInteger('count')
+                ->unsigned()
                 ->nullable(false)
                 ->comment('Кол-во книг');
-            $table->integer('py_id')
+            $table->bigInteger('py_id')
+                ->unsigned()
                 ->nullable(false)
                 ->comment('Идентификатор издания книги');
-            $table->integer('ph_id')
+            $table->bigInteger('ph_id')
+                ->unsigned()
                 ->nullable(false)
                 ->comment('Идентификатор издательста книги');
         });
