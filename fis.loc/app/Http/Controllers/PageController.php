@@ -13,7 +13,7 @@ class PageController extends Controller
 
         return view('template.default.pages.index', [
             'popular_author' => $popular_author[0],
-            'gold_reader' => $gold_reader[0]
+            'gold_reader' => $gold_reader[0] ?? null
         ]);
     }
 }
