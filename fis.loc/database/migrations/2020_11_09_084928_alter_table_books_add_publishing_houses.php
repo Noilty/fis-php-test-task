@@ -14,8 +14,8 @@ class AlterTableBooksAddPublishingHouses extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            /*$table->unsignedBigInteger('student_id')
-                ->comment('Идентификатор студента');*/
+            /*$table->unsignedBigInteger('ph_id')
+                ->comment('Идентификатор издательства');*/
 
             $table->foreign('ph_id')
                 ->references('phid')
@@ -32,7 +32,7 @@ class AlterTableBooksAddPublishingHouses extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             $table->dropForeign(['ph_id']);
-            $table->dropColumn(['ph_id']);
+            //$table->dropColumn(['ph_id']);
         });
     }
 }

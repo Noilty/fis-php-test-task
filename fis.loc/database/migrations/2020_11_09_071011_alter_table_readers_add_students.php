@@ -32,7 +32,7 @@ class AlterTableReadersAddStudents extends Migration
     {
         Schema::table('readers', function (Blueprint $table) {
             $table->dropForeign(['student_id']);
-            $table->dropColumn(['student_id']);
+            //$table->dropColumn(['student_id']);
         });
     }
 }

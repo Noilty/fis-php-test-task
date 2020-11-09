@@ -14,8 +14,8 @@ class AlterTableReadersAddBooks extends Migration
     public function up()
     {
         Schema::table('readers', function (Blueprint $table) {
-            /*$table->unsignedBigInteger('student_id')
-                ->comment('Идентификатор студента');*/
+            /*$table->unsignedBigInteger('book_id')
+                ->comment('Идентификатор книги');*/
 
             $table->foreign('book_id')
                 ->references('bid')
@@ -32,7 +32,7 @@ class AlterTableReadersAddBooks extends Migration
     {
         Schema::table('readers', function (Blueprint $table) {
             $table->dropForeign(['book_id']);
-            $table->dropColumn(['book_id']);
+            //$table->dropColumn(['book_id']);
         });
     }
 }
