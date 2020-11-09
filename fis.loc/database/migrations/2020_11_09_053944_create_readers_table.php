@@ -23,6 +23,9 @@ class CreateReadersTable extends Migration
             $table->bigInteger('book_id')
                 ->unsigned()
                 ->comment('Идентификатор книги');
+            $table->boolean('return_status')
+                ->default(0)
+                ->comment('Статус возврата книги');
             $table->timestamp('created_at')
                 ->useCurrent()
                 ->comment('Дата выдачи книги');
