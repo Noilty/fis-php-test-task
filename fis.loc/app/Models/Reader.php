@@ -19,17 +19,16 @@ class Reader extends Model
 
     public function popularAuthor()
     {
+        $from = date('2019-01-01');
+        $to = date('2020-12-31');
         $books = $this->query()
             ->selectRaw('readers.book_id, count(readers.book_id) as count')
-            //Условие популярный автор за год
-//            ->whereYear('readers.created_at', 'like', '2019-%')
-//            ->whereYear('readers.created_at', 'like', '2020-%')
+            ->whereBetween('created_at', [$from, $to])
             ->groupBy('readers.book_id')
             ->get();
-dd($books);
+
         $max_count = 0;
         $book_id = '';
-
         foreach ($books->toArray() as $item) {
             if ($max_count < $item['count']) {
                 $max_count = $item['count'];
