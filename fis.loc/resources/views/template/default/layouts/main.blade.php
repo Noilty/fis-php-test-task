@@ -13,7 +13,7 @@
 <body>
 
 <header class="container">
-    <h1>fis.loc</h1>
+    <h1 class="text-uppercase">Header</h1>
 </header>
 
 <main class="container">
@@ -21,7 +21,7 @@
 </main>
 
 <footer class="container">
-    <h1>fis.loc</h1>
+    <h1 class="text-uppercase">Footer</h1>
 </footer>
 
 <!-- Optional JavaScript; choose one of the two! -->
